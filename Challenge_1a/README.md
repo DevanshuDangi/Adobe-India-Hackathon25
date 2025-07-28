@@ -17,7 +17,7 @@ docker build --platform linux/amd64 -t <reponame.someidentifier> .
 
 ### Run Command
 ```bash
-docker run --rm -v $(pwd)/input:/app/input:ro -v $(pwd)/output/repoidentifier/:/app/output --network none <reponame.someidentifier>
+docker run --rm -v ${PWD}/input:/app/input:ro -v ${PWD}/output/repoidentifier/:/app/output --network none <reponame.someidentifier>
 ```
 
 ### Critical Constraints
@@ -111,7 +111,7 @@ Each PDF should generate a corresponding JSON file that **must conform to the sc
 docker build --platform linux/amd64 -t pdf-processor .
 
 # Test with sample data
-docker run --rm -v ${pwd}/sample_dataset/pdfs:/app/input:ro -v ${pwd}/sample_dataset/outputs:/app/output --network none pdf-processor
+docker run --rm -v ${PWD}/sample_dataset/pdfs:/app/input:ro -v ${PWD}/sample_dataset/outputs:/app/output --network none pdf-processor
 ```
 
 ### Validation Checklist
