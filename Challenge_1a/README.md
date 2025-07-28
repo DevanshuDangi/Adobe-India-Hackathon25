@@ -111,7 +111,7 @@ Each PDF should generate a corresponding JSON file that **must conform to the sc
 docker build --platform linux/amd64 -t pdf-processor .
 
 # Test with sample data
-docker run --rm -v $(pwd)/sample_dataset/pdfs:/app/input:ro -v $(pwd)/sample_dataset/outputs:/app/output --network none pdf-processor
+docker run --rm -v ${pwd}/sample_dataset/pdfs:/app/input:ro -v ${pwd}/sample_dataset/outputs:/app/output --network none pdf-processor
 ```
 
 ### Validation Checklist

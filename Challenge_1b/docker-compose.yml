@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  document-intelligence:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: doc_intelligence_app
+    volumes:
+      # Mount your Collection directories here
+      - ./Collection1:/app/Collection1
+      - ./Collection2:/app/Collection2
+      - ./Collection3:/app/Collection3
+      # Add more collections as needed
+      # - ./CollectionN:/app/CollectionN
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Optional: if you want to keep the container running for debugging
+    # command: tail -f /dev/null
+    restart: unless-stopped
